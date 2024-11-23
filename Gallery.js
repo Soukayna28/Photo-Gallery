@@ -2,19 +2,23 @@ function initialisation()
 {
     const images = document.querySelectorAll('.preview');
 
-for(let i=0; i< images.length; i++)
-{
-    images[i].setAttribute("tabindex","0");
-    images[i].onfocus = function () 
+    for (let i = 0; i < images.length; i++) 
     {
-        upDate(images[i]);
-    };
+        images[i].setAttribute("tabindex", "0");
+        console.log("tabindex set for image:", images[i].src);
 
-    images[i].onblur = function () 
-    {
-        unDo();
-    };
-}
+        images[i].addEventListener("focus", function () 
+        {
+            console.log("Focus event triggered for image:", images[i].src);
+            upDate(images[i]);
+        });
+
+        images[i].addEventListener("blur", function () 
+        {
+            console.log("Blur event triggered for image:", images[i].src);
+            unDo();
+        });
+    }
 }
 function upDate(previewPic)
 {
