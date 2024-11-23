@@ -1,86 +1,35 @@
-body {
+body{
     margin: 2%;
     border: 1px solid black;
     background-color: #b3b3b3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
-
-/* Zone d'affichage (image agrandie) */
-#image {
-    line-height: 650px;
-    width: 80%;  /* 80% de la largeur de la page */
-    height: 400px;  /* Hauteur fixée à 400px */
-    border: 5px solid black;
-    margin: 20px auto;
-    background-color: #8e68ff;
-    background-image: url('');
-    background-repeat: no-repeat;
-    color: #FFFFFF;
-    text-align: center;
-    background-size: cover; /* Assure une couverture complète */
-    margin-bottom: 25px;
-    font-size: 150%;
+#image{
+line-height:650px;
+    width: 575px;
+height: 650px;
+    border:5px solid black;
+    margin:0 auto;
+background-color: #8e68ff;
+background-image: url('');
+background-repeat: no-repeat;
+color:#FFFFFF;
+text-align: center;
+background-size: 100%;
+margin-bottom:25px;
+font-size: 150%;
 }
-
-/* Conteneur des petites images */
-.preview-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 images par ligne */
-    gap: 10px; /* Espacement entre les images */
-    width: 80%;  /* Largeur du conteneur des petites images */
-    margin: 0 auto;
+.preview{
+    width:10%;
+    margin-left:17%;
+border: 10px solid black;
 }
-
-/* Petite image (les miniatures) */
-.preview {
-    width: 100%;  /* Utilise toute la largeur de la cellule */
-    height: 100px; /* Hauteur des images miniatures */
-    object-fit: cover; /* Assure que l'image est bien recadrée */
-    border: 5px solid black;
-    transition: transform 0.3s ease; /* Transition fluide pour l'effet de zoom */
+img{
+    width:95%;
 }
-
 .preview:focus {
     outline: 3px solid #FF6347;
     box-shadow: 0 0 10px #ffcc00;
 }
-
 .preview:hover {
-    transform: scale(1.1); /* Effet de zoom au survol */
-}
-
-/* Réactive pour les écrans plus petits (tablettes et moins de 768px) */
-@media (max-width: 768px) {
-    #image {
-        width: 90%;  /* Utilise 90% de la largeur de l'écran */
-        height: auto;  /* Ajuste la hauteur automatiquement */
-        font-size: 120%; /* Taille de texte un peu plus petite */
-    }
-
-    .preview-container {
-        grid-template-columns: repeat(2, 1fr);  /* 2 images par ligne */
-    }
-
-    .preview {
-        height: 80px;  /* Taille réduite des miniatures */
-    }
-}
-
-/* Réactive pour les écrans encore plus petits (téléphones, moins de 480px) */
-@media (max-width: 480px) {
-    #image {
-        width: 100%; /* Utilise toute la largeur de l'écran */
-        height: auto;
-        font-size: 100%;  /* Taille du texte plus petite */
-    }
-
-    .preview-container {
-        grid-template-columns: 1fr;  /* Une seule image par ligne sur petit écran */
-    }
-
-    .preview {
-        height: 60px;  /* Taille encore réduite pour les petits écrans */
-    }
+    transform: scale(1.1);
 }
